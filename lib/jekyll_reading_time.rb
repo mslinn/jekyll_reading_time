@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require "jekyll"
-require_relative "jekyll_reading_time/version"
 require "jekyll_plugin_logger"
+require_relative "jekyll_reading_time/version"
 
 # A Liquid filter to estimate how long a passage of text will take to read
 #
