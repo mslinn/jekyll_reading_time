@@ -1,12 +1,12 @@
-# reading\_time
+`jekyll_reading_time`
+[![Gem Version](https://badge.fury.io/rb/jekyll_reading_time.svg)](https://badge.fury.io/rb/jekyll_reading_time)
+===========
 
-A [Liquid](http://www.liquidmarkup.org/) filter that intelligently counts the number of words in a piece of HTML and estimates how long the text will take to read.
+`jekyll_reading_time` is a Jekyll plugin that provides a [Liquid](http://www.liquidmarkup.org/) filter that intelligently counts the number of words in a piece of HTML and estimates how long the text will take to read.
 
-## Installation
+The contents of the following tags are ignored and do not count towards the computed reading time:
+`area`, `audio`, `canvas`, `code`, `embed`, `footer`, `form`, `img`, `map`, `math`, `nav`, `object`, `pre`, `script`, `svg`, `table`, `track`, `video`.
 
-The easiest way to install this plugin is with RubyGems: `gem install liquid_reading_time`.
-
-If you’re using Jekyll, see the Jekyll [documentation on installing plugins](http://jekyllrb.com/docs/plugins/#installing-a-plugin) for more-detailed installation instructions. This plugin requires Nokogiri, so if you install this one manually you’ll need to make sure that that one is installed too.
 
 # Usage
 
@@ -19,7 +19,7 @@ Two functions are provided:
         {% capture time %}{{ content | reading_time }}{% endcapture %}
         <p>This article will take {{ time }} {% if time == '1' %}minute{% else %}minutes{% endif %} to read.</p>
 
-  Even better, using the [pluralize](https://github.com/bdesham/pluralize) filter,
+  Even better, using the [pluralize](https://github.com/bdesham/pluralize) filter, which is a dependency and is automatically installed when this gem is installed.
 
         <p>This article will take {{ content | reading_time | pluralize: "minute" }} to read.</p>
 
@@ -33,32 +33,83 @@ These functions try to be smart about counting words. Specifically, words are no
 
 The plugin assumes a reading speed of 270 words per minute. Wikipedia [cites](https://en.wikipedia.org/w/index.php?title=Words_per_minute&oldid=569027766#Reading_and_comprehension) 250–300 words per minute as a typical range, and I found that I could read articles on my website at about 270 words per minute.
 
-## Author
+## Installation
 
-This plugin was created by [Benjamin Esham](https://esham.io).
+Add this line to your application's Gemfile:
 
-This project is [hosted on GitHub](https://github.com/bdesham/reading_time). Please feel free to submit pull requests.
+```ruby
+gem 'jekyll_reading_time'
+```
 
-## Version history
+And then execute:
 
-The version numbers of this project conform to [Semantic Versioning 2.0](http://semver.org/).
+    $ bundle install
 
-* 1.1.3 (2017-07-19)
-  - Updated the dependencies to reflect that the plugin works with Liquid 4 (without any code changes needed).
-* 1.1.2 (2015-03-07)
-  - Apostrophes and curly single quotes shouldn’t break words into two.
-  - This plugin works with Liquid 3.x in addition to 2.x; updated the dependencies to reflect that.
-  - Added unit tests.
-* 1.1.1 (2015-03-04)
-  - Don’t put the `ReadingTime` module in the `Jekyll` module.
-  - Packaged the plugin as a Gem.
-* 1.1.0 (2013-08-30)
-  - Switched from REXML to Nokogiri for HTML parsing.
-  - Input can now be HTML or XHTML. Previously, only valid XML was accepted (so things like non-closed `img` tags would make `reading_time` crash).
-  - Character entities like `&#x8617;` are no longer included in the word count.
-* 1.0.0 (2013-08-24): Changed reading speed from 220 to 270 words per minute.
-* 0.9.0 (2013-08-19): Initial release.
+Or install it yourself as:
+
+    $ gem install jekyll_reading_time
+
+
+## Additional Information
+More information is available on
+[Mike Slinn&rsquo;s website](https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html).
+
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+Install development dependencies like this:
+```
+$ BUNDLE_WITH="development" bundle install
+```
+
+To build and install this gem onto your local machine, run:
+```shell
+$ bundle exec rake install
+jekyll_reading_time 1.0.0 built to pkg/jekyll_reading_time-0.1.0.gem.
+jekyll_reading_time (1.0.0) installed.
+
+$ gem info jekyll_reading_time
+
+*** LOCAL GEMS ***
+
+jekyll_reading_time (1.0.0)
+    Author: Mike Slinn
+    Homepage:
+    https://github.com/mslinn/jekyll_reading_time
+    License: MIT
+    Installed at: /home/mslinn/.gems
+
+    Generates Jekyll logger with colored output.
+```
+
+To release a new version,
+  1. Update the version number in `version.rb`.
+  2. Commit all changes to git; if you don't the next step might fail with an unexplainable error message.
+  3. Run the following:
+     ```shell
+     $ bundle exec rake release
+     ```
+     The above creates a git tag for the version, commits the created tag,
+     and pushes the new `.gem` file to [RubyGems.org](https://rubygems.org).
+
+
+## Authors
+
+This plugin was created by [Benjamin Esham](https://esham.io),
+and later updated by [Mike Slinn](https://mslinn.com).
+
+This project is [hosted on GitHub](https://github.com/mslinn/jekyll_reading_time). Please feel free to submit pull requests.
+
+The gem is hosted on [RubyGems](https://rubygems.org).
+
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/mslinn/jekyll_reading_time.
+
 
 ## License
 
-Copyright © 2013, 2015, 2017 Benjamin D. Esham. This program is released under the ISC license, which you can find in the file LICENSE.md.
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
