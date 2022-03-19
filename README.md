@@ -85,7 +85,7 @@ jekyll_reading_time (1.0.0)
     Author: Mike Slinn
     Homepage:
     https://github.com/mslinn/jekyll_reading_time
-    License: MIT
+    License: ISC
     Installed at: /home/mslinn/.gems
 
     Generates Jekyll logger with colored output.
@@ -123,4 +123,4 @@ The gem is hosted on [RubyGems](https://rubygems.org).
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [ISC License](https://opensource.org/licenses/ISC).
