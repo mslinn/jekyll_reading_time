@@ -73,7 +73,10 @@ The following also does the same thing:
 $ bundle exec rake install
 jekyll_reading_time 1.0.0 built to pkg/jekyll_reading_time-0.1.0.gem.
 jekyll_reading_time (1.0.0) installed.
+```
 
+Examine the newly built gem:
+```shell
 $ gem info jekyll_reading_time
 
 *** LOCAL GEMS ***
@@ -112,7 +115,10 @@ The gem is hosted on [RubyGems](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mslinn/jekyll_reading_time.
+1. Fork the project
+2. Create a descriptively named feature branch
+3. Add your feature
+4. Submit a pull request
 
 
 ## License
