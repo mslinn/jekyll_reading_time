@@ -57,14 +57,18 @@ More information is available on
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies.
 
-Install development dependencies like this:
-```
-$ BUNDLE_WITH="development" bundle install
-```
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
+
+### Build and Install Locally
 To build and install this gem onto your local machine, run:
+```shell
+$ rake install:local
+```
+
+The following also does the same thing:
 ```shell
 $ bundle exec rake install
 jekyll_reading_time 1.0.0 built to pkg/jekyll_reading_time-0.1.0.gem.
@@ -84,6 +88,7 @@ jekyll_reading_time (1.0.0)
     Generates Jekyll logger with colored output.
 ```
 
+### Build and Push to RubyGems
 To release a new version,
   1. Update the version number in `version.rb`.
   2. Commit all changes to git; if you don't the next step might fail with an unexplainable error message.
