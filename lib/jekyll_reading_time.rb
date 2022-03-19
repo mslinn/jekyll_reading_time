@@ -2,21 +2,11 @@
 
 require "jekyll"
 require "jekyll_plugin_logger"
-require_relative "jekyll_reading_time/version"
+require "nokogiri"
 
 # A Liquid filter to estimate how long a passage of text will take to read
-#
-# https://github.com/bdesham/reading_time
-#
-# Copyright (c) 2013, 2015 Benjamin D. Esham.
-# Copyright (C) 2022 Mike Slinn.
-# This program is released under the ISC license, which you can find in the file LICENSE.md.
-
-require 'nokogiri'
-
 module Jekyll
   module ReadingTime
-
     def count_words(html)
       words(html).length
     end

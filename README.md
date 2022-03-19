@@ -33,6 +33,7 @@ These functions try to be smart about counting words. Specifically, words are no
 
 The plugin assumes a reading speed of 270 words per minute. Wikipedia [cites](https://en.wikipedia.org/w/index.php?title=Words_per_minute&oldid=569027766#Reading_and_comprehension) 250–300 words per minute as a typical range, and I found that I could read articles on my website at about 270 words per minute.
 
+
 ## Installation
 
 Add this line to your application's Gemfile:
