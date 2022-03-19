@@ -49,5 +49,5 @@ module Jekyll
   end
 
   Liquid::Template.register_filter(ReadingTime)
-  info "Loaded jekyll_reading_time plugin."
+  info { "Loaded jekyll_reading_time plugin." }
 end
