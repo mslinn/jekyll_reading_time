@@ -85,7 +85,8 @@ $ gem info jekyll_reading_time
 jekyll_reading_time (1.0.0)
     Author: Mike Slinn
     Homepage:
-    https://github.com/mslinn/jekyll_reading_time
+    https://gith
+    ub.com/mslinn/jekyll_reading_time
     License: ISC
     Installed at: /home/mslinn/.gems
 
