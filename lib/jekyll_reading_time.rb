@@ -3,6 +3,11 @@
 require "jekyll"
 require "jekyll_plugin_logger"
 require "nokogiri"
+require_relative "jekyll_reading_time/version"
+
+module JekyllReadingTimeName
+  PLUGIN_NAME = "jekyll_reading_time"
+end
 
 # A Liquid filter to estimate how long a passage of text will take to read
 module Jekyll
@@ -25,7 +30,7 @@ module Jekyll
       root.children.each { |node|
         if node.text?
           texts << node.text
-        elsif not ignored_tags.include? node.name
+        elsif !ignored_tags.include? node.name
           texts.concat text_nodes node
         end
       }
@@ -38,6 +43,6 @@ module Jekyll
     end
   end
 
+  info { "Loaded #{JekyllReadingTimeName::PLUGIN_NAME} #{JekyllReadingTime::VERSION} plugin." }
   Liquid::Template.register_filter(ReadingTime)
-  info { "Loaded jekyll_reading_time plugin." }
 end
