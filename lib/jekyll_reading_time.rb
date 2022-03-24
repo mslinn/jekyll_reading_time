@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "jekyll_plugin_logger"
 require "liquid"
 require "nokogiri"
 require_relative "jekyll_reading_time/version"
