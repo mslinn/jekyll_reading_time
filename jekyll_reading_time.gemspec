@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.6.0"
   spec.summary = "A Liquid filter to estimate how long a passage of text will take to read."
   spec.test_files = spec.files.grep(%r!^(test|spec|features)/!)
-  spec.version = JekyllReadingTime::VERSION
+  spec.version = JekyllReadingTimeVersion::VERSION
 
   spec.add_dependency "jekyll", ">= 3.5.0"
   spec.add_dependency "jekyll_plugin_logger"

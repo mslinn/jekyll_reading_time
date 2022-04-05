@@ -42,5 +42,5 @@ module ReadingTime
   end
 end
 
-PluginMetaLogger.instance.info { "Loaded #{JekyllReadingTimeName::PLUGIN_NAME} #{JekyllReadingTime::VERSION} plugin." }
+PluginMetaLogger.instance.info { "Loaded #{JekyllReadingTimeName::PLUGIN_NAME} #{JekyllReadingTimeVersion::VERSION} plugin." }
 Liquid::Template.register_filter(ReadingTime)
