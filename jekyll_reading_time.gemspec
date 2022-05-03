@@ -40,10 +40,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "liquid_pluralize"
   spec.add_dependency "nokogiri"
 
-  spec.add_development_dependency "debase"
+  # spec.add_development_dependency "debase"
   # spec.add_development_dependency "rubocop-jekyll"
   # spec.add_development_dependency "rubocop-rake"
   # spec.add_development_dependency "rubocop-rspec"
-  spec.add_development_dependency "ruby-debug-ide"
+  # spec.add_development_dependency "ruby-debug-ide"
 end
 # rubocop:enable Metrics/BlockLength
