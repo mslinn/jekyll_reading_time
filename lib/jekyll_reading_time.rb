@@ -1,12 +1,10 @@
-# frozen_string_literal: true
-
-require "jekyll_plugin_logger"
-require "liquid"
-require "nokogiri"
-require_relative "jekyll_reading_time/version"
+require 'jekyll_plugin_logger'
+require 'liquid'
+require 'nokogiri'
+require_relative 'jekyll_reading_time/version'
 
 module JekyllReadingTimeName
-  PLUGIN_NAME = "jekyll_reading_time"
+  PLUGIN_NAME = 'jekyll_reading_time'.freeze
 end
 
 # A Liquid filter to estimate how long a passage of text will take to read
@@ -23,16 +21,16 @@ module ReadingTime
 
   def text_nodes(root)
     ignored_tags = %w( area audio canvas code embed footer form img
-                        map math nav object pre script svg table track video )
+                       map math nav object pre script svg table track video )
 
     texts = []
-    root.children.each { |node|
+    root.children.each do |node|
       if node.text?
         texts << node.text
       elsif !ignored_tags.include? node.name
         texts.concat text_nodes node
       end
-    }
+    end
     texts
   end
 
