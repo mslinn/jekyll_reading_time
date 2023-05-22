@@ -10,7 +10,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   END_OF_DESC
   spec.email = ['benjamin@esham.io', 'mslinn@mslinn.com']
   spec.files = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
-  spec.homepage = github
+  spec.homepage = 'https://www.mslinn.com/jekyll_plugins/jekyll_reading_time.html'
   spec.license = 'ISC'
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
