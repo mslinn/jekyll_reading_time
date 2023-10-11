@@ -1,6 +1,4 @@
-`jekyll_reading_time`
-[![Gem Version](https://badge.fury.io/rb/jekyll_reading_time.svg)](https://badge.fury.io/rb/jekyll_reading_time)
-===========
+# `jekyll_reading_time` [![Gem Version](https://badge.fury.io/rb/jekyll_reading_time.svg)](https://badge.fury.io/rb/jekyll_reading_time)
 
 `jekyll_reading_time` is a Jekyll plugin that provides a [Liquid](http://www.liquidmarkup.org/) filter that
 intelligently counts the number of words in a piece of HTML and estimates how long the text will take to read.
@@ -10,7 +8,7 @@ The contents of the following tags are ignored and do not count towards the comp
 `pre`, `script`, `svg`, `table`, `track`, `video`.
 
 
-# Usage
+## Usage
 
 Two functions are provided:
 
@@ -21,17 +19,22 @@ Two functions are provided:
   The input should be HTML (i.e. the text should have already been run through your Markdown or Textile filter).
   For example, you could use it in a `_layout` file like this:
 
-        {% capture time %}{{ content | reading_time }}{% endcapture %}
-        <p>This article will take {{ time }} {% if time == '1' %}minute{% else %}minutes{% endif %} to read.</p>
+    ```html
+    {% capture time %}{{ content | reading_time }}{% endcapture %}
+    <p>This article will take {{ time }} {% if time == '1' %}minute{% else %}minutes{% endif %} to read.</p>
+    ```
 
   Even better, using the [pluralize](https://github.com/bdesham/pluralize) filter,
   which is a dependency and is automatically installed when this gem is installed.
 
-        <p>This article will take {{ content | reading_time | pluralize: "minute" }} to read.</p>
+    ```html
+    <p>This article will take {{ content | reading_time | pluralize: "minute" }} to read.</p>
+    ```
 
 * count\_words
 
   This function returns the number of words in the input. Like `reading_time`, this function takes HTML as its input.
+
 
 ## Details
 
@@ -56,10 +59,13 @@ gem 'jekyll_reading_time'
 
 And then execute:
 
-    $ bundle install
+```shell
+$ bundle
+```
 
 
 ## Additional Information
+
 More information is available on
 [Mike Slinn&rsquo;s website](https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html).
 
@@ -72,7 +78,9 @@ You can also run `bin/console` for an interactive prompt that will allow you to 
 
 
 ### Build and Install Locally
+
 To build and install this gem onto your local machine, run:
+
 ```shell
 $ bundle exec rake install
 jekyll_reading_time 1.0.0 built to pkg/jekyll_reading_time-0.1.0.gem.
@@ -80,6 +88,7 @@ jekyll_reading_time (1.0.0) installed.
 ```
 
 Examine the newly built gem:
+
 ```shell
 $ gem info jekyll_reading_time
 
@@ -96,14 +105,19 @@ jekyll_reading_time (1.0.0)
     Generates Jekyll logger with colored output.
 ```
 
+
 ### Build and Push to RubyGems
+
 To release a new version,
+
   1. Update the version number in `version.rb`.
   2. Commit all changes to git; if you don't the next step might fail with an unexplainable error message.
   3. Run the following:
+
      ```shell
      $ bundle exec rake release
      ```
+
      The above creates a git tag for the version, commits the created tag,
      and pushes the new `.gem` file to [RubyGems.org](https://rubygems.org).
 
