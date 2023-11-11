@@ -3,7 +3,7 @@
 require 'fileutils'
 require 'bundler/setup'
 require 'irb'
-require 'jekyll_reading_time'
 require 'liquid'
+require_relative '../libjekyll_reading_time'
 
 IRB.start(__FILE__)
