@@ -20,8 +20,8 @@ module ReadingTime
   private
 
   def text_nodes(root)
-    ignored_tags = %w( area audio canvas code embed footer form img
-                       map math nav object pre script svg table track video )
+    ignored_tags = %w[ area audio canvas code embed footer form img
+                       map math nav object pre script svg table track video ]
 
     texts = []
     root.children.each do |node|
@@ -36,7 +36,7 @@ module ReadingTime
 
   def words(html)
     fragment = Nokogiri::HTML.fragment html
-    text_nodes(fragment).map { |text| text.scan(%r![\p{L}\p{M}'‘’]+!) }.flatten
+    text_nodes(fragment).map { |text| text.scan(/[\p{L}\p{M}'‘’]+/) }.flatten
   end
 end
 

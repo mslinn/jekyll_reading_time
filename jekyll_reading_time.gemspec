@@ -29,7 +29,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.require_paths         = ['lib']
   spec.required_ruby_version = '>= 2.6.0'
   spec.summary               = 'A Liquid filter to estimate how long a passage of text will take to read.'
-  spec.test_files            = spec.files.grep(%r!^(test|spec|features)/!)
+  spec.test_files            = spec.files.grep %r{^(test|spec|features)/}
   spec.version               = JekyllReadingTimeVersion::VERSION
 
   spec.add_dependency 'jekyll', '>= 3.5.0'
