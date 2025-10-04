@@ -27,6 +27,7 @@ _yardoc/
 coverage/
 doc/
 binstub/
+exe/
 jekyll/doc/
 node_modules/
 out/
